@@ -19,7 +19,7 @@ namespace Gra.ViewModel
         private string textBoxAccountName;
         private string textBoxPassword = "";
         private string maskedPassword = "";
-        public delegate void MyEventHandler (object o, EventArgs e);
+        public delegate void MyEventHandler (object o, AccountInformationEventArgs e);
         public event MyEventHandler ClickedButtonEnterGame;
 
         public LoginPageHandler()
@@ -27,11 +27,11 @@ namespace Gra.ViewModel
             _canExecute = true;
         }
 
-        protected virtual void OnClickedButtonEnterGame()
+        protected virtual void OnClickedButtonEnterGame(string _accessedOnAccountId)
         {
             if(ClickedButtonEnterGame != null)
             {
-                ClickedButtonEnterGame(this, EventArgs.Empty);
+                ClickedButtonEnterGame(this, new AccountInformationEventArgs() { accessedOnAccountId = _accessedOnAccountId } );
             }
         }
 
@@ -53,9 +53,10 @@ namespace Gra.ViewModel
                 accessedOnAccountId = cursor.GetValue(0).ToString();
             }
             connector.disConnect();
-            if(Convert.ToInt32(accessedOnAccountId) == 1)
+            if(Convert.ToInt32(accessedOnAccountId) != 0)
             {
-                OnClickedButtonEnterGame();
+                ViewModelLocator.MainWindowHandlerProperty.SlidedFrame = new MainPlaygroundPage();
+                OnClickedButtonEnterGame(accessedOnAccountId);
             }
         }
 

@@ -30,10 +30,12 @@ namespace Gra
             ViewModelLocator.LoginPageHandlerProperty.ClickedButtonEnterGame += OnClickedButtonEnterGame;
         }
 
-        private void OnClickedButtonEnterGame(object o, EventArgs e)
+        private void OnClickedButtonEnterGame(object o, AccountInformationEventArgs e)
         {
             WindowState = WindowState.Maximized;
             WindowStyle = WindowStyle.None;
+            frame.Width = ((Panel)Application.Current.MainWindow.Content).ActualWidth;
+            frame.Height = ((Panel)Application.Current.MainWindow.Content).ActualHeight;
         }
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
