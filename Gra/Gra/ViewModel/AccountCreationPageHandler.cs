@@ -19,6 +19,7 @@ namespace Gra.ViewModel
         private string textBoxAccountName = "";
         private string textBoxPassword = "";
         private string textBoxPasswordRepeat = "";
+        private string maskedPassword = "";
         private ICommand buttonCreateAccountCancel;
         private ICommand buttonCreateAccountAccept;
         private bool _canExecute;
@@ -26,7 +27,6 @@ namespace Gra.ViewModel
         {
             _canExecute = true;
         }
-
         public string selectInDatabase (string _commandText)
         {
             string resultSelect = "0";
@@ -49,7 +49,6 @@ namespace Gra.ViewModel
             commander.ExecuteNonQuery();
             connector.disConnect();
         }
-
         private void buttonCreateAccountCancelAction()
         {
             ViewModelLocator.MainWindowHandlerProperty.SlidedFrame = new LoginPage();
@@ -73,12 +72,19 @@ namespace Gra.ViewModel
                 {
                     if(Convert.ToInt32(repeatedLineageId) == 0)
                     {
-                        commandText = dataBaseFirstQueries.insertNewAccoutToAccountsTable(DescriptionDataBaseFirst.DATABASE_ACCOUNTS_TABLE, DescriptionDataBaseFirst.ACCOUNTS_TABLE_ACCOUNT_NAME, DescriptionDataBaseFirst.ACCOUNTS_TABLE_PASSWORD, textBoxAccountName, textBoxPassword);
-                        insertToDatabase(commandText);
-                        commandText = dataBaseFirstQueries.checkRepeatedAccountNameToCreateAccount(DescriptionDataBaseFirst.ACCOUNTS_TABLE_ID, DescriptionDataBaseFirst.ACCOUNTS_TABLE_ACCOUNT_NAME, DescriptionDataBaseFirst.DATABASE_ACCOUNTS_TABLE, textBoxAccountName);
-                        string textIdAccount = selectInDatabase(commandText);
-                        commandText = dataBaseFirstQueries.insertNewCharacterToPlayersCharactersTable(DescriptionDataBaseFirst.PLAYERS_CHARACTERS_TABLE_ID_ACCOUNT, DescriptionDataBaseFirst.PLAYERS_CHARACTERS_TABLE_CHARACTER_NAME, DescriptionDataBaseFirst.PLAYERS_CHARACTERS_TABLE_LINEAGE, DescriptionDataBaseFirst.DATABASE_PLAYERS_CHARACTERS_TABLE, textIdAccount, textBoxCharacterName, textBoxLineage);
-                        insertToDatabase(commandText);
+                        if(textBoxPassword == textBoxPasswordRepeat)
+                        {
+                            commandText = dataBaseFirstQueries.insertNewAccoutToAccountsTable(DescriptionDataBaseFirst.DATABASE_ACCOUNTS_TABLE, DescriptionDataBaseFirst.ACCOUNTS_TABLE_ACCOUNT_NAME, DescriptionDataBaseFirst.ACCOUNTS_TABLE_PASSWORD, textBoxAccountName, textBoxPassword);
+                            insertToDatabase(commandText);
+                            commandText = dataBaseFirstQueries.checkRepeatedAccountNameToCreateAccount(DescriptionDataBaseFirst.ACCOUNTS_TABLE_ID, DescriptionDataBaseFirst.ACCOUNTS_TABLE_ACCOUNT_NAME, DescriptionDataBaseFirst.DATABASE_ACCOUNTS_TABLE, textBoxAccountName);
+                            string textIdAccount = selectInDatabase(commandText);
+                            commandText = dataBaseFirstQueries.insertNewCharacterToPlayersCharactersTable(DescriptionDataBaseFirst.PLAYERS_CHARACTERS_TABLE_ID_ACCOUNT, DescriptionDataBaseFirst.PLAYERS_CHARACTERS_TABLE_CHARACTER_NAME, DescriptionDataBaseFirst.PLAYERS_CHARACTERS_TABLE_LINEAGE, DescriptionDataBaseFirst.DATABASE_PLAYERS_CHARACTERS_TABLE, textIdAccount, textBoxCharacterName, textBoxLineage);
+                            insertToDatabase(commandText);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Both password not the same!");
+                        }
                     }
                     else
                     {
@@ -95,7 +101,26 @@ namespace Gra.ViewModel
                 MessageBox.Show("Account name already exist!");
             }
         }
-
+        private string maskingPassword(ref string _textBoxPassword, string _maskedPassword)
+        {
+            if (_maskedPassword.Length == _textBoxPassword.Length + 1)
+            {
+                _textBoxPassword += _maskedPassword[_maskedPassword.Length - 1];
+            }
+            else if (_maskedPassword.Length + 1 == _textBoxPassword.Length)
+            {
+                _textBoxPassword = _textBoxPassword.Remove(_textBoxPassword.Length - 1);
+            }
+            _maskedPassword = "";
+            if (_textBoxPassword != null)
+            {
+                for (int i = 0; i < _textBoxPassword.Length; i++)
+                {
+                    _maskedPassword += "*";
+                }
+            }
+            return _maskedPassword;
+        }
         #region Property
         public string TextBoxCharacterName
         {
@@ -135,24 +160,24 @@ namespace Gra.ViewModel
         }
         public string TextBoxPassword
         {
-            get { return textBoxPassword; }
+            get { return maskingPassword(ref textBoxPassword, maskedPassword); }
             set
             {
-                if (value != textBoxPassword)
+                if (value != maskedPassword)
                 {
-                    textBoxPassword = value;
+                    maskedPassword = value;
                     OnPropertyChanged("TextBoxPassword");
                 }
             }
         }
         public string TextBoxPasswordRepeat
         {
-            get { return textBoxPasswordRepeat; }
+            get { return maskingPassword(ref textBoxPasswordRepeat, maskedPassword); }
             set
             {
-                if ( value != textBoxPasswordRepeat)
+                if ( value != maskedPassword)
                 {
-                    textBoxPasswordRepeat = value;
+                    maskedPassword = value;
                     OnPropertyChanged("TextBoxPasswordRepeat");
                 }
             }
