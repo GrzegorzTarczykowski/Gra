@@ -64,12 +64,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Model\LocationOnMap.cs" />
     <Compile Include="ViewModel\AccountCreationPageHandler.cs" />
     <Compile Include="ViewModel\AccountInformationEventArgs.cs" />
     <Compile Include="ViewModel\CommandHandler.cs" />
     <Compile Include="ViewModel\LoginPageHandler.cs" />
     <Compile Include="ViewModel\MainWindowHandler.cs" />
     <Compile Include="ViewModel\PlaygroundHandler\MainPlaygroundPageHandler.cs" />
+    <Compile Include="ViewModel\PlaygroundHandler\MapHandler.cs" />
     <Compile Include="ViewModel\SqlLiteHandler\ConnectorSqlLite.cs" />
     <Compile Include="ViewModel\SqlLiteHandler\DataBaseFirstQueries.cs" />
     <Compile Include="ViewModel\SqlLiteHandler\DescriptionDataBaseFirst.cs" />
@@ -82,6 +84,9 @@
     </Compile>
     <Compile Include="View\MainPlaygroundPage.xaml.cs">
       <DependentUpon>MainPlaygroundPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MapPage.xaml.cs">
+      <DependentUpon>MapPage.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -104,6 +109,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\MainPlaygroundPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MapPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -135,8 +144,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Model\" />
+    <Resource Include="Images\grass.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

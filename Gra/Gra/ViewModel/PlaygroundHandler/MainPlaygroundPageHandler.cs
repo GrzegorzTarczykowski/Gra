@@ -7,6 +7,7 @@ using System.Windows;
 using Gra.ViewModel;
 using System.ComponentModel;
 using System.Windows.Controls;
+using Gra.View;
 
 namespace Gra.ViewModel.PlaygroundHandler
 {
@@ -18,6 +19,7 @@ namespace Gra.ViewModel.PlaygroundHandler
         public MainPlaygroundPageHandler()
         {
             ViewModelLocator.LoginPageHandlerProperty.ClickedButtonEnterGame += OnClickedButtonEnterGame;
+            frameMap = new MapPage();
         }
 
         private void OnClickedButtonEnterGame(object o, AccountInformationEventArgs e)
