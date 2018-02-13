@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Gra.Model;
+using Gra.ViewModel.Game;
 
 namespace Gra.View
 {
@@ -24,6 +25,7 @@ namespace Gra.View
         public ActionPlacePage()
         {
             InitializeComponent();
+            DataContext = new GameSession();
         }
     }
 }

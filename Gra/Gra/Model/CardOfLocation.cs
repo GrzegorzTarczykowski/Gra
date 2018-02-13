@@ -4,25 +4,24 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Gra.Model;
 
 namespace Gra.Model
 {
-    class LocationOnMap : INotifyPropertyChanged
+    class CardOfLocation : INotifyPropertyChanged
     {
         private int xCoordinate;
         private int yCoordinate;
-        private string pathToImage;
+        private string locationName;
         #region Property
-        public string PathToImage
+        public string LocationName
         {
-            get { return pathToImage; }
+            get { return locationName; }
             set
             {
-                if(value != pathToImage)
+                if (value != locationName)
                 {
-                    pathToImage = value;
-                    OnPropertyChanged("PathToImage");
+                    locationName = value;
+                    OnPropertyChanged("LocationName");
                 }
             }
         }

@@ -14,8 +14,8 @@ namespace Gra.ViewModel.PlaygroundHandler
         public MapHandler()
         {
             listLocationOfMap = new ObservableCollection<LocationOnMap> { new LocationOnMap() { PathToImage = "/Gra;component/Images/kostka.png" } };
-            listLocationOfMap.Add(new LocationOnMap() { PathToImage = "/Gra;component/Images/grass.png" });
-            listLocationOfMap.Add(new LocationOnMap() { PathToImage = "/Gra;component/Images/grayTown.png" });
+            listLocationOfMap.Add(new LocationOnMap() { PathToImage = "/Gra;component/Images/grass.png", XCoordinate = 0, YCoordinate = 0});
+            listLocationOfMap.Add(new LocationOnMap() { PathToImage = "/Gra;component/Images/grayTown.png", XCoordinate = 11, YCoordinate = 19 });
         }
     }
 }

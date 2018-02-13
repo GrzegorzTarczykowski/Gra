@@ -64,10 +64,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Factories\WorldFactory.cs" />
+    <Compile Include="Model\CardOfLocation.cs" />
     <Compile Include="Model\LocationOnMap.cs" />
+    <Compile Include="Model\World.cs" />
     <Compile Include="ViewModel\AccountCreationPageHandler.cs" />
     <Compile Include="ViewModel\AccountInformationEventArgs.cs" />
     <Compile Include="ViewModel\CommandHandler.cs" />
+    <Compile Include="ViewModel\Game\GameSession.cs" />
     <Compile Include="ViewModel\LoginPageHandler.cs" />
     <Compile Include="ViewModel\MainWindowHandler.cs" />
     <Compile Include="ViewModel\PlaygroundHandler\MainPlaygroundPageHandler.cs" />

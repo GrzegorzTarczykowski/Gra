@@ -33,7 +33,8 @@
             </Grid.ColumnDefinitions>
             <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Center" Content="MIASTO"/>
             <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Center" Content="(Ród)"/>
-            
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="{Binding CurrentCardOfLocation.LocationName}"/>
+
         </Grid>
         <Grid Grid.Row="0" Grid.Column="1" Margin="10" Background="Green">
             <Grid.RowDefinitions>
