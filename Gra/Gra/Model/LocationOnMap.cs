@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Gra.Model;
 
 namespace Gra.Model
 {
@@ -12,7 +13,6 @@ namespace Gra.Model
         private int xCoordinate;
         private int yCoordinate;
         private string pathToImage;
-        private string nameLocation;
         #region Property
         public string PathToImage
         {

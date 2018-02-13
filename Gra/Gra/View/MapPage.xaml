@@ -48,32 +48,33 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-        <Image Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="60" Width="60" Source="{Binding listFieldOfMap[1].PathToImage}"/>
-        <Image Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="60" Width="60" Source="{Binding listFieldOfMap[1].PathToImage}"/>
-        <Image Grid.Row="0" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="60" Width="60" Source="{Binding listFieldOfMap[1].PathToImage}"/>
-        <Image Grid.Row="0" Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="60" Width="60" Source="{Binding listFieldOfMap[1].PathToImage}"/>
-        <Image Grid.Row="0" Grid.Column="4" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="60" Width="60" Source="{Binding listFieldOfMap[1].PathToImage}"/>
-        <Image Grid.Row="0" Grid.Column="5" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="60" Width="60" Source="{Binding listFieldOfMap[1].PathToImage}"/>
-        <Image Grid.Row="0" Grid.Column="6" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="60" Width="60" Source="{Binding listFieldOfMap[1].PathToImage}"/>
-        <Image Grid.Row="0" Grid.Column="7" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="60" Width="60" Source="{Binding listFieldOfMap[1].PathToImage}"/>
-        <Image Grid.Row="0" Grid.Column="8" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="60" Width="60" Source="{Binding listFieldOfMap[1].PathToImage}"/>
-        <Image Grid.Row="0" Grid.Column="9" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="60" Width="60" Source="{Binding listFieldOfMap[1].PathToImage}"/>
-        <Image Grid.Row="0" Grid.Column="10" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="60" Width="60" Source="{Binding listFieldOfMap[1].PathToImage}"/>
-        <Image Grid.Row="0" Grid.Column="11" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="60" Width="60" Source="{Binding listFieldOfMap[1].PathToImage}"/>
-        <Image Grid.Row="0" Grid.Column="12" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="60" Width="60" Source="{Binding listFieldOfMap[1].PathToImage}"/>
-        <Image Grid.Row="0" Grid.Column="13" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="60" Width="60" Source="{Binding listFieldOfMap[1].PathToImage}"/>
-        <Image Grid.Row="0" Grid.Column="14" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="60" Width="60" Source="{Binding listFieldOfMap[1].PathToImage}"/>
-        <Image Grid.Row="0" Grid.Column="15" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="60" Width="60" Source="{Binding listFieldOfMap[1].PathToImage}"/>
-        <Image Grid.Row="0" Grid.Column="16" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="60" Width="60" Source="{Binding listFieldOfMap[1].PathToImage}"/>
-        <Image Grid.Row="0" Grid.Column="17" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="60" Width="60" Source="{Binding listFieldOfMap[1].PathToImage}"/>
-        <Image Grid.Row="0" Grid.Column="18" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="60" Width="60" Source="{Binding listFieldOfMap[1].PathToImage}"/>
-        <Image Grid.Row="0" Grid.Column="19" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="60" Width="60" Source="{Binding listFieldOfMap[1].PathToImage}"/>
-        <Image Grid.Row="0" Grid.Column="20" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="60" Width="60" Source="{Binding listFieldOfMap[1].PathToImage}"/>
-        <Image Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="60" Width="60" Source="{Binding listFieldOfMap[1].PathToImage}"/>
-        <Image Grid.Row="11" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="60" Width="60" Source="{Binding listFieldOfMap[1].PathToImage}"/>
-        <Image Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="60" Width="60" Source="{Binding listFieldOfMap[1].PathToImage}"/>
-        <Image Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="60" Width="60" Source="{Binding listFieldOfMap[1].PathToImage}"/>
-        <Image Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="60" Width="60" Source="{Binding listFieldOfMap[1].PathToImage}" Cursor="Cross"/>
-        <Image Grid.Row="9" Grid.Column="19" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="60" Width="60" Source="{Binding listFieldOfMap[1].PathToImage}"/>
+        <Image Grid.Row="0" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="60" Width="60" Source="{Binding listLocationOfMap[1].PathToImage}"/>
+        <Image Grid.Row="0" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="60" Width="60" Source="{Binding listLocationOfMap[1].PathToImage}"/>
+        <Image Grid.Row="0" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="60" Width="60" Source="{Binding listLocationOfMap[1].PathToImage}"/>
+        <Image Grid.Row="0" Grid.Column="3" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="60" Width="60" Source="{Binding listLocationOfMap[1].PathToImage}"/>
+        <Image Grid.Row="0" Grid.Column="4" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="60" Width="60" Source="{Binding listLocationOfMap[1].PathToImage}"/>
+        <Image Grid.Row="0" Grid.Column="5" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="60" Width="60" Source="{Binding listLocationOfMap[1].PathToImage}"/>
+        <Image Grid.Row="0" Grid.Column="6" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="60" Width="60" Source="{Binding listLocationOfMap[1].PathToImage}"/>
+        <Image Grid.Row="0" Grid.Column="7" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="60" Width="60" Source="{Binding listLocationOfMap[1].PathToImage}"/>
+        <Image Grid.Row="0" Grid.Column="8" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="60" Width="60" Source="{Binding listLocationOfMap[1].PathToImage}"/>
+        <Image Grid.Row="0" Grid.Column="9" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="60" Width="60" Source="{Binding listLocationOfMap[1].PathToImage}"/>
+        <Image Grid.Row="0" Grid.Column="10" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="60" Width="60" Source="{Binding listLocationOfMap[1].PathToImage}"/>
+        <Image Grid.Row="0" Grid.Column="11" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="60" Width="60" Source="{Binding listLocationOfMap[1].PathToImage}"/>
+        <Image Grid.Row="0" Grid.Column="12" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="60" Width="60" Source="{Binding listLocationOfMap[1].PathToImage}"/>
+        <Image Grid.Row="0" Grid.Column="13" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="60" Width="60" Source="{Binding listLocationOfMap[1].PathToImage}"/>
+        <Image Grid.Row="0" Grid.Column="14" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="60" Width="60" Source="{Binding listLocationOfMap[1].PathToImage}"/>
+        <Image Grid.Row="0" Grid.Column="15" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="60" Width="60" Source="{Binding listLocationOfMap[1].PathToImage}"/>
+        <Image Grid.Row="0" Grid.Column="16" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="60" Width="60" Source="{Binding listLocationOfMap[1].PathToImage}"/>
+        <Image Grid.Row="0" Grid.Column="17" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="60" Width="60" Source="{Binding listLocationOfMap[1].PathToImage}"/>
+        <Image Grid.Row="0" Grid.Column="18" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="60" Width="60" Source="{Binding listLocationOfMap[1].PathToImage}"/>
+        <Image Grid.Row="0" Grid.Column="19" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="60" Width="60" Source="{Binding listLocationOfMap[1].PathToImage}"/>
+        <Image Grid.Row="0" Grid.Column="20" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="60" Width="60" Source="{Binding listLocationOfMap[1].PathToImage}"/>
+        <Image Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="60" Width="60" Source="{Binding listLocationOfMap[1].PathToImage}"/>
+        <Image Grid.Row="11" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="60" Width="60" Source="{Binding listLocationOfMap[1].PathToImage}"/>
+        <Image Grid.Row="1" Grid.Column="2" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="60" Width="60" Source="{Binding listLocationOfMap[1].PathToImage}"/>
+        <Image Grid.Row="2" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="60" Width="60" Source="{Binding listLocationOfMap[1].PathToImage}"/>
+        <Image Grid.Row="2" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="60" Width="60" Source="{Binding listLocationOfMap[1].PathToImage}" Cursor="Hand"/>
+        <Image Grid.Row="9" Grid.Column="19" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="60" Width="60" Source="{Binding listLocationOfMap[1].PathToImage}"/>
+        <Image Grid.Row="10" Grid.Column="18" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="60" Width="60" Source="{Binding listLocationOfMap[2].PathToImage}"/>
     </Grid>
 </Page>

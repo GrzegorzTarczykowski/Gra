@@ -20,13 +20,12 @@ namespace Gra.ViewModel.PlaygroundHandler
         {
             ViewModelLocator.LoginPageHandlerProperty.ClickedButtonEnterGame += OnClickedButtonEnterGame;
             frameMap = new MapPage();
+            frameActionPlace = new ActionPlacePage();
         }
 
         private void OnClickedButtonEnterGame(object o, AccountInformationEventArgs e)
         {
-            MessageBox.Show(e.accessedOnAccountId);
-            MessageBox.Show("Szerokosc " + ViewModelLocator.MainWindowHandlerProperty.SlidedFrame.ActualWidth + " Wysokosc " + ViewModelLocator.MainWindowHandlerProperty.SlidedFrame.ActualHeight);
-            
+            MessageBox.Show(e.accessedOnAccountId);            
         }
 
         #region Property

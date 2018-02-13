@@ -79,6 +79,9 @@
     <Compile Include="View\AccountCreationPage.xaml.cs">
       <DependentUpon>AccountCreationPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\ActionPlacePage.xaml.cs">
+      <DependentUpon>ActionPlacePage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
     </Compile>
@@ -101,6 +104,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="View\AccountCreationPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ActionPlacePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -144,9 +151,11 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Resource Include="Images\grass.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\grayTown.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
