@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,11 @@ namespace Gra.Model
         private int xCoordinate;
         private int yCoordinate;
         private string locationName;
+        private ObservableCollection<CardOfBuilding> listCardOfBuilding;
+        public CardOfLocation()
+        {
+            listCardOfBuilding = new ObservableCollection<CardOfBuilding>();
+        }
         #region Property
         public string LocationName
         {
@@ -46,6 +52,18 @@ namespace Gra.Model
                 {
                     yCoordinate = value;
                     OnPropertyChanged("YCoordinate");
+                }
+            }
+        }
+        public ObservableCollection<CardOfBuilding> ListCardOfBuilding
+        {
+            get { return listCardOfBuilding; }
+            set
+            {
+                if (value != listCardOfBuilding)
+                {
+                    listCardOfBuilding = value;
+                    OnPropertyChanged("ListCardOfBuilding");
                 }
             }
         }

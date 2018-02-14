@@ -31,9 +31,29 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Center" Content="MIASTO"/>
+            <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Center" Content="{Binding CurrentCardOfLocation.LocationName}"/>
             <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Center" Content="(Ród)"/>
-            <TextBlock Grid.Row="2" Grid.Column="0" Text="{Binding CurrentCardOfLocation.LocationName}"/>
+            <DataGrid Grid.Row="2" Grid.Column="0"
+                  Margin="0"
+                  ItemsSource="{Binding CurrentCardOfLocation.ListCardOfBuilding}"
+                  AutoGenerateColumns="False"
+                  HeadersVisibility="Column"
+                  CanUserAddRows="False"
+                  CanUserDeleteRows="False"
+                  Background="Yellow"
+                  VerticalScrollBarVisibility="Auto">
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn Header="Budynki" Width="*">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button
+                                    Width="Auto"
+                                    Content="{Binding Path=BuildingName}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
 
         </Grid>
         <Grid Grid.Row="0" Grid.Column="1" Margin="10" Background="Green">

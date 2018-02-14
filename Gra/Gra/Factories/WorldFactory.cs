@@ -12,9 +12,18 @@ namespace Gra.Factories
         internal World CreateWorld()
         {
             World newWorld = new World();
-            newWorld.AddLocation("Szare Miasto", 11, 19);
-            newWorld.AddLocation("Czarny Staw", 12, 20);
-            newWorld.AddLocation("Biała Pustynia", 11, 20);
+            newWorld.ListOfCardOfBuildings.Clear();
+            newWorld.AddBuilding("Przytulek");
+            newWorld.AddBuilding("Gospoda");
+            newWorld.AddLocation("Szare Miasto", 11, 19, newWorld.ListOfCardOfBuildings);
+            newWorld.ListOfCardOfBuildings.Clear();
+            newWorld.AddBuilding("Chata");
+            newWorld.AddBuilding("Schowek");
+            newWorld.AddLocation("Czarny Staw", 12, 20, newWorld.ListOfCardOfBuildings);
+            newWorld.ListOfCardOfBuildings.Clear();
+            newWorld.AddBuilding("Barak");
+            newWorld.AddBuilding("Altana");
+            newWorld.AddLocation("Biała Pustynia", 11, 20, newWorld.ListOfCardOfBuildings);
             return newWorld;
         }
     }
