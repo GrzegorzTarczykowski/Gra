@@ -72,6 +72,7 @@
     <Compile Include="ViewModel\AccountCreationPageHandler.cs" />
     <Compile Include="ViewModel\AccountInformationEventArgs.cs" />
     <Compile Include="ViewModel\CommandHandler.cs" />
+    <Compile Include="ViewModel\CommandHandlerWithParameter.cs" />
     <Compile Include="ViewModel\Game\GameSession.cs" />
     <Compile Include="ViewModel\LoginPageHandler.cs" />
     <Compile Include="ViewModel\MainWindowHandler.cs" />
