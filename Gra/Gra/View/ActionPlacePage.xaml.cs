@@ -27,5 +27,10 @@ namespace Gra.View
             InitializeComponent();
             DataContext = new GameSession();
         }
+
+        private void ChosenBuildingButtonInLocation(object sender, RoutedEventArgs e)
+        {
+            //((FrameworkElement)sender).IsEnabled = false;
+        }
     }
 }

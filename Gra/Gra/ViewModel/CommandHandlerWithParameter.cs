@@ -19,6 +19,13 @@ namespace Gra.ViewModel
             _canExecute = canExecute;
         }
 
+        public void SetCanExecute(bool canExecute)
+        {
+            _canExecute = canExecute;
+            var handler = CanExecuteChanged;
+            if (handler != null) handler(this, EventArgs.Empty);
+        }
+
         public bool CanExecute(object parameter)
         {
             return _canExecute;

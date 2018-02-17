@@ -14,9 +14,11 @@ namespace Gra.Model
         private int yCoordinate;
         private string locationName;
         private ObservableCollection<CardOfBuilding> listCardOfBuilding;
+        private ObservableCollection<CardOfPerson> listCardOfPerson;
         public CardOfLocation()
         {
             listCardOfBuilding = new ObservableCollection<CardOfBuilding>();
+            listCardOfPerson = new ObservableCollection<CardOfPerson>();
         }
         #region Property
         public string LocationName
@@ -64,6 +66,18 @@ namespace Gra.Model
                 {
                     listCardOfBuilding = value;
                     OnPropertyChanged("ListCardOfBuilding");
+                }
+            }
+        }
+        public ObservableCollection<CardOfPerson> ListCardOfPerson
+        {
+            get { return listCardOfPerson; }
+            set
+            {
+                if (value != listCardOfPerson)
+                {
+                    listCardOfPerson = value;
+                    OnPropertyChanged("ListCardOfPerson");
                 }
             }
         }
