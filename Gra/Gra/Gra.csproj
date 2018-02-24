@@ -65,10 +65,10 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Factories\WorldFactory.cs" />
+    <Compile Include="Model\CardOfAction.cs" />
     <Compile Include="Model\CardOfBuilding.cs" />
     <Compile Include="Model\CardOfLocation.cs" />
     <Compile Include="Model\CardOfPerson.cs" />
-    <Compile Include="Model\LocationOnMap.cs" />
     <Compile Include="Model\World.cs" />
     <Compile Include="ViewModel\AccountCreationPageHandler.cs" />
     <Compile Include="ViewModel\AccountInformationEventArgs.cs" />
@@ -78,7 +78,6 @@
     <Compile Include="ViewModel\LoginPageHandler.cs" />
     <Compile Include="ViewModel\MainWindowHandler.cs" />
     <Compile Include="ViewModel\PlaygroundHandler\MainPlaygroundPageHandler.cs" />
-    <Compile Include="ViewModel\PlaygroundHandler\MapHandler.cs" />
     <Compile Include="ViewModel\SqlLiteHandler\ConnectorSqlLite.cs" />
     <Compile Include="ViewModel\SqlLiteHandler\DataBaseFirstQueries.cs" />
     <Compile Include="ViewModel\SqlLiteHandler\DescriptionDataBaseFirst.cs" />

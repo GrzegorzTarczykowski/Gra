@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,11 @@ namespace Gra.Model
     class CardOfPerson : INotifyPropertyChanged
     {
         private string personName;
+        private ObservableCollection<CardOfAction> listCardOfAction;
+        public CardOfPerson()
+        {
+            listCardOfAction = new ObservableCollection<CardOfAction>();
+        }
         #region Property
         public string PersonName
         {
@@ -20,6 +26,18 @@ namespace Gra.Model
                 {
                     personName = value;
                     OnPropertyChanged("PersonName");
+                }
+            }
+        }
+        public ObservableCollection<CardOfAction> ListCardOfAction
+        {
+            get { return listCardOfAction; }
+            set
+            {
+                if (value != listCardOfAction)
+                {
+                    listCardOfAction = value;
+                    OnPropertyChanged("ListCardOfAction");
                 }
             }
         }

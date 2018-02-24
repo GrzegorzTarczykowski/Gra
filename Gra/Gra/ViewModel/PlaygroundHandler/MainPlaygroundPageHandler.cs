@@ -8,6 +8,7 @@ using Gra.ViewModel;
 using System.ComponentModel;
 using System.Windows.Controls;
 using Gra.View;
+using Gra.ViewModel.Game;
 
 namespace Gra.ViewModel.PlaygroundHandler
 {
@@ -16,11 +17,15 @@ namespace Gra.ViewModel.PlaygroundHandler
         private Page frameMap;
         private Page frameCharacterPlace;
         private Page frameActionPlace;
+        private GameSession newGameSession;
         public MainPlaygroundPageHandler()
         {
             ViewModelLocator.LoginPageHandlerProperty.ClickedButtonEnterGame += OnClickedButtonEnterGame;
             frameMap = new MapPage();
             frameActionPlace = new ActionPlacePage();
+            newGameSession = new GameSession();
+            frameMap.DataContext = newGameSession;
+            frameActionPlace.DataContext = newGameSession;
         }
 
         private void OnClickedButtonEnterGame(object o, AccountInformationEventArgs e)
@@ -62,6 +67,18 @@ namespace Gra.ViewModel.PlaygroundHandler
                 {
                     frameActionPlace = value;
                     OnPropertyChanged("FrameActionPlace");
+                }
+            }
+        }
+        public GameSession NewGameSession
+        {
+            get { return newGameSession; }
+            set
+            {
+                if (value != newGameSession)
+                {
+                    newGameSession = value;
+                    OnPropertyChanged("NewGameSession");
                 }
             }
         }

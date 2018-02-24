@@ -12,9 +12,11 @@ namespace Gra.Model
     {
         private string buildingName;
         private ObservableCollection<CardOfPerson> listCardOfPerson;
+        private ObservableCollection<CardOfAction> listCardOfAction;
         public CardOfBuilding()
         {
             listCardOfPerson = new ObservableCollection<CardOfPerson>();
+            listCardOfAction = new ObservableCollection<CardOfAction>();
         }
         #region Property
         public string BuildingName
@@ -38,6 +40,18 @@ namespace Gra.Model
                 {
                     listCardOfPerson = value;
                     OnPropertyChanged("ListCardOfPerson");
+                }
+            }
+        }
+        public ObservableCollection<CardOfAction> ListCardOfAction
+        {
+            get { return listCardOfAction; }
+            set
+            {
+                if (value != listCardOfAction)
+                {
+                    listCardOfAction = value;
+                    OnPropertyChanged("ListCardOfAction");
                 }
             }
         }

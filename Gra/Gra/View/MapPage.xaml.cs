@@ -24,7 +24,6 @@ namespace Gra.View
         public MapPage()
         {
             InitializeComponent();
-            DataContext = new MapHandler();
         }
     }
 }

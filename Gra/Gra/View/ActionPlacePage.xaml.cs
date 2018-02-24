@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Gra.Model;
-using Gra.ViewModel.Game;
+using Gra.ViewModel.PlaygroundHandler;
 
 namespace Gra.View
 {
@@ -25,12 +25,6 @@ namespace Gra.View
         public ActionPlacePage()
         {
             InitializeComponent();
-            DataContext = new GameSession();
-        }
-
-        private void ChosenBuildingButtonInLocation(object sender, RoutedEventArgs e)
-        {
-            //((FrameworkElement)sender).IsEnabled = false;
         }
     }
 }

@@ -51,7 +51,6 @@
                                     Command="{Binding Path=DataContext.ChosenBuildingButtonInLocationClickCommand, UpdateSourceTrigger=PropertyChanged,
                                                 RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"
                                     CommandParameter="{Binding}"
-                                    Click="ChosenBuildingButtonInLocation"
                                     Width="Auto"
                                     Background="Orange"
                                     Content="{Binding Path=BuildingName}"/>
@@ -85,12 +84,37 @@
                     </DataGridTemplateColumn>
                 </DataGrid.Columns>
             </DataGrid>
+            <DataGrid Grid.Row="2" Grid.Column="2"
+                  Margin="0"
+                  ItemsSource="{Binding CurrentCardOfLocation.ListCardOfAction}"
+                  AutoGenerateColumns="False"
+                  HeadersVisibility="Column"
+                  CanUserAddRows="False"
+                  CanUserDeleteRows="False"
+                  Background="Yellow"
+                  VerticalScrollBarVisibility="Auto">
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn Header="Działania" Width="*">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button
+                                    Command="{Binding Path=DataContext.ChosenActionButtonInLocationClickCommand,
+                                                RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"
+                                    CommandParameter="{Binding}"
+                                    Width="Auto"
+                                    Background="DarkOrange"
+                                    Content="{Binding Path=ActionName}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
             <Button
                 Grid.Row="3" Grid.ColumnSpan="3"
                 Command="{Binding HitTheRoadClickCommand}"
                 CommandParameter="{Binding}"
                 Width="Auto"
-                Background="Aquamarine"
+                Background="Brown"
                 Content="Ruszaj w droge"/>
         </Grid>
         <Grid Grid.Row="0" Grid.Column="1" Margin="10" Background="Green">
@@ -131,12 +155,37 @@
                     </DataGridTemplateColumn>
                 </DataGrid.Columns>
             </DataGrid>
+            <DataGrid Grid.Row="2" Grid.Column="1"
+                  Margin="0"
+                  ItemsSource="{Binding CurrentCardOfBuilding.ListCardOfAction}"
+                  AutoGenerateColumns="False"
+                  HeadersVisibility="Column"
+                  CanUserAddRows="False"
+                  CanUserDeleteRows="False"
+                  Background="Green"
+                  VerticalScrollBarVisibility="Auto">
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn Header="Działania" Width="*">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button
+                                    Command="{Binding Path=DataContext.ChosenActionButtonInBuildingClickCommand,
+                                                RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"
+                                    CommandParameter="{Binding}"
+                                    Width="Auto"
+                                    Background="Aquamarine"
+                                    Content="{Binding Path=ActionName}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
             <Button
                 Grid.Row="3" Grid.ColumnSpan="2"
                 Command="{Binding LeaveTheBuildingClickCommand}"
                 CommandParameter="{Binding}"
                 Width="Auto"
-                Background="Aquamarine"
+                Background="Brown"
                 Content="Wyjdz z budynku"/>
         </Grid>
         <Grid Grid.Row="0" Grid.Column="2" Margin="10" Background="Blue">
@@ -151,14 +200,58 @@
             </Grid.ColumnDefinitions>
             <Label Grid.Row="0" Grid.Column="0" Background="White" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Width="200" Content="Osoba"/>
             <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Background="BlueViolet" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Width="200" Content="{Binding Path=CurrentCardOfPerson.PersonName, UpdateSourceTrigger=PropertyChanged}"/>
+            <DataGrid Grid.Row="2" Grid.Column="0"
+                  Margin="0"
+                  ItemsSource="{Binding CurrentCardOfPerson.ListCardOfAction}"
+                  AutoGenerateColumns="False"
+                  HeadersVisibility="Column"
+                  CanUserAddRows="False"
+                  CanUserDeleteRows="False"
+                  Background="Blue"
+                  VerticalScrollBarVisibility="Auto">
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn Header="Działania" Width="*">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button
+                                    Command="{Binding Path=DataContext.ChosenActionButtonInPersonClickCommand,
+                                                RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"
+                                    CommandParameter="{Binding}"
+                                    Width="Auto"
+                                    Background="Gray"
+                                    Content="{Binding Path=ActionName}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
             <Button
                 Grid.Row="3"
                 Command="{Binding EndTheConversationClickCommand}"
                 CommandParameter="{Binding}"
                 Width="Auto"
-                Background="Aquamarine"
+                Background="Brown"
                 Content="Zakoncz rozmowe"/>
         </Grid>
-        <Label Grid.Row="0" Grid.Column="3" Grid.RowSpan="3" Background="Red"/>
+        <Grid Grid.Row="0" Grid.Column="3" Margin="10" Background="Red">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="30"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Label Grid.Row="0" Grid.Column="0" Background="White" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Width="400" Content="Działanie"/>
+            <Label Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Background="Pink" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Width="400" Content="{Binding Path=CurrentCardOfAction.ActionName, UpdateSourceTrigger=PropertyChanged}"/>
+            <Button
+                Grid.Row="3"
+                Command="{Binding EndTheConversationClickCommand}"
+                CommandParameter="{Binding}"
+                Width="Auto"
+                Background="Brown"
+                Content="Zakoncz działanie"/>
+        </Grid>
     </Grid>
 </Page>

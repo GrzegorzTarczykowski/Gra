@@ -10,15 +10,18 @@ namespace Gra.Model
 {
     class CardOfLocation : INotifyPropertyChanged
     {
+        private string locationName;
+        private string pathToImage;
         private int xCoordinate;
         private int yCoordinate;
-        private string locationName;
         private ObservableCollection<CardOfBuilding> listCardOfBuilding;
         private ObservableCollection<CardOfPerson> listCardOfPerson;
+        private ObservableCollection<CardOfAction> listCardOfAction;
         public CardOfLocation()
         {
             listCardOfBuilding = new ObservableCollection<CardOfBuilding>();
             listCardOfPerson = new ObservableCollection<CardOfPerson>();
+            listCardOfAction = new ObservableCollection<CardOfAction>();
         }
         #region Property
         public string LocationName
@@ -30,6 +33,18 @@ namespace Gra.Model
                 {
                     locationName = value;
                     OnPropertyChanged("LocationName");
+                }
+            }
+        }
+        public string PathToImage
+        {
+            get { return pathToImage; }
+            set
+            {
+                if (value != pathToImage)
+                {
+                    pathToImage = value;
+                    OnPropertyChanged("PathToImage");
                 }
             }
         }
@@ -78,6 +93,18 @@ namespace Gra.Model
                 {
                     listCardOfPerson = value;
                     OnPropertyChanged("ListCardOfPerson");
+                }
+            }
+        }
+        public ObservableCollection<CardOfAction> ListCardOfAction
+        {
+            get { return listCardOfAction; }
+            set
+            {
+                if (value != listCardOfAction)
+                {
+                    listCardOfAction = value;
+                    OnPropertyChanged("ListCardOfAction");
                 }
             }
         }
